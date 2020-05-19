@@ -51,12 +51,7 @@
     height: 20px;
   }
 
-  .me{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    float: right;
-  }
+
 
   .us{
     display: flex;
