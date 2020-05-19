@@ -18,7 +18,6 @@ import Axios from 'axios';
 // });
 
 var weatherapi = "dd33fff118b9f92aa2ae154e21f57789";
-var googleapi = "AIzaSyCsScr14fB3jMR4qNX64ZWZ3pOn66-1R50";
 
 class Dashboard extends Component {
 
@@ -32,6 +31,14 @@ class Dashboard extends Component {
 			search: 'Delhi',
 			country: 'America',
 			temp: '',
+			desc: '',
+			hours: '',
+			min: '',
+			feel: '',
+			humid: '',
+			pressure: '',
+			visible: '',
+			wind: '',
 		}
 		this.getPermission = this.getPermission.bind(this);
 		this.onSearchChange = this.onSearchChange.bind(this);
@@ -52,7 +59,15 @@ class Dashboard extends Component {
 				var h = parseInt(hour,10);
 				console.log(h);
 				this.setState({time: h});
-				this.setState({temp: Math.floor(res.data.main.temp - 273)})
+				this.setState({temp: Math.floor(res.data.main.temp - 273.15)})
+				this.setState({desc: res.data.weather[0].description});
+				this.setState({hours: new Date().getHours()});
+				this.setState({min: new Date().getMinutes()});
+				this.setState({feel: Math.floor(res.data.main.feels_like-273.15)});
+				this.setState({humid: res.data.main.humidity});
+				this.setState({pressure: res.data.main.pressure});
+				this.setState({visible: res.data.visibility/1000});
+				this.setState({wind: res.data.wind.speed});
 			})
 			.then(()=>{
 				console.log('hour is',this.state.time);
@@ -106,7 +121,15 @@ class Dashboard extends Component {
 				var h = parseInt(hour,10);
 				console.log(h);
 				this.setState({time: h});
-				this.setState({temp: Math.floor(res.data.main.temp - 273)})
+				this.setState({temp: Math.floor(res.data.main.temp - 273)});
+				this.setState({desc: res.data.weather[0].description});
+				this.setState({hours: new Date().getHours()});
+				this.setState({min: new Date().getMinutes()});
+				this.setState({feel: Math.floor(res.data.main.feels_like-273.15)});
+				this.setState({humid: res.data.main.humidity});
+				this.setState({pressure: res.data.main.pressure});
+				this.setState({visible: res.data.visibility/1000});
+				this.setState({wind: res.data.wind.speed});
 			})
 			.then(()=>{
 				console.log('hour is',this.state.time);
@@ -154,7 +177,15 @@ class Dashboard extends Component {
 				var h = parseInt(hour,10);
 				console.log(h);
 				this.setState({time: h});
-				this.setState({temp: Math.floor(res.data.main.temp - 273)})
+				this.setState({temp: Math.floor(res.data.main.temp - 273)});
+				this.setState({desc: res.data.weather[0].description});
+				this.setState({hours: new Date().getHours()});
+				this.setState({min: new Date().getMinutes()});
+				this.setState({feel: Math.floor(res.data.main.feels_like-273.15)});
+				this.setState({humid: res.data.main.humidity});
+				this.setState({pressure: res.data.main.pressure});
+				this.setState({visible: res.data.visibility/1000});
+				this.setState({wind: res.data.wind.speed});
 			})
 			.then(()=>{
 				console.log('hour is',this.state.time);
@@ -196,25 +227,30 @@ class Dashboard extends Component {
 					</Link>
 			</div>
 			<div className="d-flex flex-column">
-			<div className="d-flex ">
-				<h1 className="lt f2 yes b them mr-auto"><span style={{color: "white"}}>Wearest</span></h1>
-				<div className="d-flex flex-column m-3">
-				<input 
-					className = 'p-2 ba bg-lightest-blue tc'
-					type = 'search' 
-					placeholder = 'Search A Place' 
-					onKeyDown={this.onSearchChange}
-				/>
-				<div className="mt-2">
-					<button className="ba" onClick={this.getPermission}><span style={{color: "blue"}}>Or use your current location</span></button>
-				</div>
-				</div>
-			</div> 
+				<div className="d-flex ">
+					<h1 className="lt f2 yes b them mr-auto"><span style={{color: "white"}}>Wearest</span></h1>
+					<div className="d-flex flex-column m-3">
+					<input 
+						className = 'p-2 ba bg-lightest-blue tc'
+						type = 'search' 
+						placeholder = 'Search A Place' 
+						onKeyDown={this.onSearchChange}
+					/>
+					<div className="mt-2">
+						<button className="ba" onClick={this.getPermission}><span style={{color: "blue"}}>Or use your current location</span></button>
+					</div>
+					</div>
+				</div> 
 			
-			<div>
-			<div className="b f2"><span style={{color: "white"}}>{this.state.city},{this.state.country}</span></div>
-			<div className="f1 ">{this.state.temp}<span>&#8451;</span></div>
-			</div>
+				<div>
+					<div className="b f2"><span style={{color: "white"}}>{this.state.city},{this.state.country}</span></div>
+					<div className="f1 sris"><span style={{color: "white"}}>{this.state.temp}&#8451;</span></div>
+					<div className="f2"><span style={{color: "white"}}>{this.state.desc}</span><br></br>
+						<span className="f4" style={{color: "white"}}>Updated as of {this.state.hours}:{this.state.min}</span><br></br>
+						<span className="f4" style={{color: "white"}}>Feels Like {this.state.feel}°   Wind {this.state.wind}km/h   Visiblity {this.state.visible}km</span><br></br>
+	<span className="f4" style={{color: "white"}}>Pressure {this.state.pressure}mb Humidity {this.state.humid}%</span>
+					</div>
+				</div>
 
 
 			</div>
