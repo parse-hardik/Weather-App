@@ -82,5 +82,12 @@
   }
 
   .sris{
-    font-size: 90px;
+    font-size: 95px;
+  }
+  .moon{
+    width:100px;
+    height:100px;
+  }
+  .hide{
+    display:none;
   }

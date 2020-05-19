@@ -80,7 +80,7 @@ class Dashboard extends Component {
 				}
 				if(this.state.time>=12 && this.state.time<=17)
 				{
-					document.getElementById('mybody').style.backgroundImage = "url('https://i.pinimg.com/originals/cd/fc/7c/cdfc7ca5d6de2933b51f1d525716f739.jpg')";
+					document.getElementById('mybody').style.backgroundImage = "url('https://www.vmcdn.ca/f/files/moosejawtoday/images/weather/2019-03-09-weather-sunrise-mg.jpg;w=960')";
 					document.getElementById('mybody').style.backgroundRepeat =  "no-repeat";
 					document.getElementById('mybody').style.backgroundSize =  "cover";
 					document.getElementById('mybody').classList.add('bgtransit');
@@ -147,7 +147,7 @@ class Dashboard extends Component {
 				}
 				if(this.state.time>=18)
 				{
-					document.getElementById('mybody').style.backgroundImage = "url('https://i.pinimg.com/originals/cd/fc/7c/cdfc7ca5d6de2933b51f1d525716f739.jpg')";
+					document.getElementById('mybody').style.backgroundImage = "url('https://besthqwallpapers.com/img/original/26795/starry-sky-night-bright-stars-clouds.jpg')";
 					document.getElementById('mybody').style.backgroundRepeat =  "no-repeat";
 					document.getElementById('mybody').style.backgroundSize =  "cover";
 				}
@@ -242,13 +242,13 @@ class Dashboard extends Component {
 					</div>
 				</div> 
 			
-				<div>
+				<div className="d-flex flex-column justify-content-center ">
 					<div className="b f2"><span style={{color: "white"}}>{this.state.city},{this.state.country}</span></div>
-					<div className="f1 sris"><span style={{color: "white"}}>{this.state.temp}&#8451;</span></div>
+					<div className="d-flex center"><img src="https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c399.png" className={""+ this.state.time>18?"moon mr-2":"hide"}/><div className="f1 sris"><span style={{color: "white"}}>{this.state.temp}&#8451;</span></div></div>
 					<div className="f2"><span style={{color: "white"}}>{this.state.desc}</span><br></br>
-						<span className="f4" style={{color: "white"}}>Updated as of {this.state.hours}:{this.state.min}</span><br></br>
-						<span className="f4" style={{color: "white"}}>Feels Like {this.state.feel}°   Wind {this.state.wind}km/h   Visiblity {this.state.visible}km</span><br></br>
-	<span className="f4" style={{color: "white"}}>Pressure {this.state.pressure}mb Humidity {this.state.humid}%</span>
+						<div className="f4 b mt-2" style={{color: "white"}}>Updated as of {this.state.hours}:{this.state.min}</div>
+						<div className="f4 b mt-2" style={{color: "white"}}>Feels Like {this.state.feel}°   Wind {this.state.wind}km/h   Visiblity {this.state.visible}km</div>
+						<div className="f4 b mt-2" style={{color: "white"}}>Pressure {this.state.pressure}mb Humidity {this.state.humid}%</div>
 					</div>
 				</div>
 
