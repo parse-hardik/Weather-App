@@ -195,24 +195,31 @@ class Dashboard extends Component {
 					<span className="f3">hi</span>
 					</Link>
 			</div>
-			<div className="">
-				<h1 className="lt f2 yes b them"><span style={{color: "white"}}>Wearest</span></h1>
-				<div className="me">
+			<div className="d-flex flex-column">
+			<div className="d-flex ">
+				<h1 className="lt f2 yes b them mr-auto"><span style={{color: "white"}}>Wearest</span></h1>
+				<div className="d-flex flex-column m-3">
 				<input 
-					className = 'pa3 ba b--green bg-lightest-blue tc mr5'
+					className = 'p-2 ba bg-lightest-blue tc'
 					type = 'search' 
 					placeholder = 'Search A Place' 
 					onKeyDown={this.onSearchChange}
 				/>
-			</div>
-			</div> 
-		  <div className="me mr5">
+				<div className="mt-2">
 					<button className="ba" onClick={this.getPermission}><span style={{color: "blue"}}>Or use your current location</span></button>
-			</div>
+				</div>
+				</div>
+			</div> 
+			
 			<div>
-			<h1 className="us b"><span style={{color: "white"}}>{this.state.city},{this.state.country}</span></h1>
-			<h1 className="us b f1">{this.state.temp}</h1>
+			<div className="b f2"><span style={{color: "white"}}>{this.state.city},{this.state.country}</span></div>
+			<div className="f1 ">{this.state.temp}<span>&#8451;</span></div>
 			</div>
+
+
+			</div>
+			
+		  
 
 			<Switch>
 				<Route path="/forecast" ></Route>
