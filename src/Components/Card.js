@@ -19,7 +19,7 @@ const Card =({ max,min,desc,icon,date,day,keys }) => {
 			<h2><span style={{color: "white"}}>{dayname} {date}</span></h2>
 			<img alt = 'This a photu!' src = {`http://openweathermap.org/img/wn/${icon}@2x.png`} className="moon"/>
 			<div>
-				<p className="f2"><span style={{ color: "white" }}>{max}&#8451;</span></p><p className="f3"><span style={{ color: "white" }}>{min}&#8451;</span></p><br></br>
+				<a className="f2 m-2"><span style={{ color: "white" }}>{max}&#8451;</span></a><a className="f3 m-2"><span style={{ color: "white" }}>{min}&#8451;</span></a><br></br>
 				<p><span style={{ color: "white" }}>{desc}</span></p>
 			</div>
 		</div>
