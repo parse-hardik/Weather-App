@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Switch, Link, Route, BrowserRouter as Router } from 'react-router-dom';
 import './DashBoard.css';
 import Weather from './Weather';
 import Axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 var weatherapi = "dd33fff118b9f92aa2ae154e21f57789";
 
@@ -257,8 +256,7 @@ class Dashboard extends Component {
 
 	render() {
 		return (
-			<Router>
-				
+				<div>
 				<div className="d-flex flex-column" id="new">
 					<div className="d-flex ">
 						<div className="d-flex flex-column mr-auto">
@@ -293,14 +291,9 @@ class Dashboard extends Component {
 
 				</div>
 				<Weather daily={this.state.daily}/>
+			</div>
 
 
-
-				<Switch>
-					<Route path="/forecast" ></Route>
-				</Switch>
-
-			</Router>
 		);
 	}
 }
