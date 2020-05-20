@@ -1,3 +1,8 @@
+.social{
+	font-size: 35px;
+color:black;
+}
+
 .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 60px; /* Set the width of the sidebar */
@@ -88,4 +93,11 @@
   }
   .hide{
     display:none;
+  }
+  .hey{
+    display:inline;
+  }
+
+  .ok{
+    color: white;
   }

@@ -3,6 +3,7 @@ import { Switch, Link, Route, BrowserRouter as Router } from 'react-router-dom';
 import './DashBoard.css';
 import Weather from './Weather';
 import Axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 var weatherapi = "dd33fff118b9f92aa2ae154e21f57789";
 
@@ -11,7 +12,7 @@ class Dashboard extends Component {
 	constructor() {
 		super();
 		this.state = {
-			city: "Salvador",
+			city: "Delhi",
 			lat: '',
 			lon: '',
 			time: '',
@@ -258,28 +259,34 @@ class Dashboard extends Component {
 		return (
 			<Router>
 				
-				<div className="d-flex flex-column">
+				<div className="d-flex flex-column" id="new">
 					<div className="d-flex ">
-						<h1 id="new" className="lt f2 yes b them mr-auto"><span style={{ color: "white" }}>Wearest</span></h1><span><button>&#8451</button></span>
+						<div className="d-flex flex-column mr-auto">
+							<h1 id="" className="lt f2 yes b them ">Wearest</h1>
+							<div className="d-flex ml-5" id="social-media">
+								<a href={`https://twitter.com/intent/tweet?text=Current Weather in ${this.state.city} is ${this.state.temp}. For a live weather update, visit`} target="_blank">	   <FontAwesomeIcon icon={['fab', 'twitter']} className="social ok ml-5" /></a>
+							</div>
+						</div>
+						
 						<div className="d-flex flex-column m-3">
-						<div className="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
+						<div className="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-1 mb-0">
 							<i className="fas fa-search" aria-hidden="true"></i>
 							<input onKeyDown={this.onSearchChange} className=" mt-2 f3 form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
 								aria-label="Search" />
 						</div>
-							<div className="mt-2">
-								<a className="" onClick={this.getPermission}><span style={{ color: "white" }}>Or use your current location</span></a>
+							<div className="m-0">
+								<a className="" onClick={this.getPermission}>Or use your current location</a>
 							</div>
 						</div>
 					</div>
 
-					<div id="new" className="d-flex flex-column justify-content-center ">
-						<div className="b f2"><span style={{ color: "white" }}>{this.state.city},{this.state.country}</span></div>
-						<div className="d-flex center"><img src={`http://openweathermap.org/img/wn/${this.state.icon}@2x.png`} className="moon mr-2" /><div className="f1 sris"><span style={{ color: "white" }}>{this.state.temp}&#8451;</span></div></div>
-						<div className="f2"><span style={{ color: "white" }}>{this.state.desc}</span><br></br>
-							<div className="f4 mt-2" style={{ color: "white" }}>Updated as of {this.state.hours}:{this.state.min}</div>
-							<div className="f4 mt-2" style={{ color: "white" }}>Feels Like {this.state.feel}°   Wind {this.state.wind}km/h   Visiblity {this.state.visible}km</div>
-							<div className="f4 mt-2" style={{ color: "white" }}>Pressure {this.state.pressure}mb Humidity {this.state.humid}%</div>
+					<div id="" className="d-flex flex-column justify-content-center hey ">
+						<div className="b f2">{this.state.city},{this.state.country}</div>
+						<div className="d-flex center"><img src={`http://openweathermap.org/img/wn/${this.state.icon}@2x.png`} className="moon mr-2" /><div className="f1 sris">{this.state.temp}&#8451;</div></div>
+						<div className="f2">{this.state.desc}<br></br>
+							<h5 className="f4 mt-2">Updated as of {this.state.hours}:{this.state.min}</h5>
+							<h5 className="f4 mt-2">Feels Like {this.state.feel}°   Wind {this.state.wind}km/h   Visiblity {this.state.visible}km</h5>
+							<h5 className="f4 mt-2" >Pressure {this.state.pressure}mb Humidity {this.state.humid}%</h5>
 						</div>
 					</div>
 					
