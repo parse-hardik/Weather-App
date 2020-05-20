@@ -16,9 +16,9 @@ const Card =({ max,min,desc,icon,date,day,keys }) => {
 	}
 	return(
 		<div className={`tc dib br3 pa3 ma2 grow bw2 shadow-5`}>
-			<h2><span style={{color: "white"}}>{dayname} {date}</span></h2>
-			<img alt = 'This a photu!' src = {`http://openweathermap.org/img/wn/${icon}@2x.png`} className="moon"/>
-			<div>
+			<h2 id="new"><span style={{color: "white"}}>{dayname} {date}</span></h2>
+			<img id="new" alt = 'This a photu!' src = {`http://openweathermap.org/img/wn/${icon}@2x.png`} className="moon"/>
+			<div id="new">
 				<a className="f2 m-2"><span style={{ color: "white" }}>{max}&#8451;</span></a><a className="f3 m-2"><span style={{ color: "white" }}>{min}&#8451;</span></a><br></br>
 				<p><span style={{ color: "white" }}>{desc}</span></p>
 			</div>

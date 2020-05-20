@@ -12,7 +12,7 @@ class Dashboard extends Component {
 	constructor() {
 		super();
 		this.state = {
-			city: "Salvador",
+			city: "Delhi",
 			lat: '',
 			lon: '',
 			time: '',
@@ -264,9 +264,7 @@ class Dashboard extends Component {
 						<div className="d-flex flex-column mr-auto">
 							<h1 id="" className="lt f2 yes b them ">Wearest</h1>
 							<div className="d-flex ml-5" id="social-media">
-							<a href="https://www.facebook.com/zhiffyit/" target="_blank"><FontAwesomeIcon icon={['fab', 'facebook']} className="social  ml-3" /></a>
-					  		<a href="https://www.linkedin.com/company/zhiffy/" target="_blank">	  <FontAwesomeIcon icon={['fab', 'twitter']} className="social  ml-3" /></a>
-					  		<a href="https://twitter.com/zhiffyit" target="_blank">	   <FontAwesomeIcon icon={['fab', 'linkedin']} className="social  ml-3" /></a>
+								<a href={`https://twitter.com/intent/tweet?text=Current Weather in ${this.state.city} is ${this.state.temp}. For a live weather update, visit`} target="_blank">	   <FontAwesomeIcon icon={['fab', 'twitter']} className="social ok ml-5" /></a>
 							</div>
 						</div>
 						
