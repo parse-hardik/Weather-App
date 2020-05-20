@@ -51,8 +51,6 @@
     height: 20px;
   }
 
-
-
   .us{
     display: flex;
     flex-direction: row;
@@ -72,7 +70,7 @@
 
   .bgtransit{
     height: 100%;   /* ges Hoehe der Seite -> weitere Hoehenangaben werden relativ hierzu ausgewertet */
-    overflow: hidden;   /*  hide scrollbars */
+    /* overflow: hidden;    hide scrollbars */
     opacity: 1.0;
     -webkit-transition: background 300ms ease-in 200ms;
     -moz-transition: background 300ms ease-in 200ms;
