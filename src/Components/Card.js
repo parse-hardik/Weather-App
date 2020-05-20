@@ -3,6 +3,7 @@ import React from 'react';
 const Card =({ max,min,desc,icon,date,day,keys }) => {
 	var dayname='Mon';
 	var day = new Date().getDay();
+	console.log(icon)
 	day = (day+keys)>=7?(day+keys-7):day+keys ;
 	switch(day)
 	{
