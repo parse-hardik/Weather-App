@@ -264,7 +264,7 @@ class Dashboard extends Component {
 						<div className="d-flex flex-column mr-auto">
 							<h1 id="" className="lt f2 yes b them ">Wearest</h1>
 							<div className="d-flex ml-5" id="social-media">
-								<a href={`https://twitter.com/intent/tweet?text=Current Weather in ${this.state.city} is ${this.state.temp}. For a live weather update, visit`} target="_blank">	   <FontAwesomeIcon icon={['fab', 'twitter']} className="social ok ml-5" /></a>
+								<a href={`https://twitter.com/intent/tweet?text=Current Weather in ${this.state.city} is ${this.state.temp}. For a live weather update, visit https://thawing-reef-11790.herokuapp.com/`} target="_blank">	   <FontAwesomeIcon icon={['fab', 'twitter']} className="social ok ml-5" /></a>
 							</div>
 						</div>
 						
